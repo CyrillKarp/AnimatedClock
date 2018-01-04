@@ -1,0 +1,108 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.clock {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: #2b4d61 0 5px 15px;
+    visibility: hidden;
+}
+.sec,
+.min,
+.hour {
+    display: block;
+    position: absolute;
+    left: 57px;
+    top: 0;
+}
+.clock-close {
+    position: absolute;
+    top: 0;
+    right: -34px;
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+}
+.clock-close::before,
+.clock-close::after {
+    content: "";
+    position: absolute;
+    width: 19px;
+    height: 3px;
+    background-color: #d0d0d0;
+    border-radius: 1px;
+    top: 10px;
+    left: 2px;
+}
+.clock-close::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.clock-close::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.clock-show {
+    margin: 50px auto;
+    position: relative;
+    background: #fed136;
+    padding: 20px 30px;
+    display: block;
+    font: bold 24px/24px Arial, sans-serif;
+    text-transform: uppercase;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+}
+@keyframes bounceIn {
+    from, 20%, 40%, 60%, 80%, to {
+        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    20% {
+        transform: scale3d(1.1, 1.1, 1.1);
+    }
+    40% {
+        transform: scale3d(.9, .9, .9);
+    }
+    60% {
+        opacity: 1;
+        transform: scale3d(1.03, 1.03, 1.03);
+    }
+    80% {
+        transform: scale3d(.97, .97, .97);
+    }
+    to {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}
+.bounceIn {
+    animation-name: bounceIn;
+    animation-duration: .75s;
+}
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
